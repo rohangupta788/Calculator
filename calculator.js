@@ -11,7 +11,15 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
   var num1 = Number(req.body.num1);
   var num2 = Number(req.body.num2);
+  if (req.body.submit === "add"){
   var result = num1 + num2;
+}  else if (req.body.submit === "minus"){
+  var result = num1 - num2;
+}  else if (req.body.submit === "divide"){
+  var result = num1 / num2;
+}  else if (req.body.submit === "multiply"){
+  var result = num1 * num2;
+}
   res.send("The calculation of inputs is "+ result);
 })
 
